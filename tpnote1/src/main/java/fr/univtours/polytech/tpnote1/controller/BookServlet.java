@@ -34,6 +34,7 @@ public class BookServlet extends HttpServlet  {
         } else if ("return".equals(action)) {
             bookBusiness.returnBook(bookId);
         }
+        
 
         response.sendRedirect("book");
     }

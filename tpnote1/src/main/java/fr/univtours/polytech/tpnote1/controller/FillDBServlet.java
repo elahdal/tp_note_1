@@ -24,13 +24,13 @@ public class FillDBServlet extends HttpServlet {
         BookBean livre = new BookBean();
         livre.setAuthor("René Barjavel");;
         livre.setTitle("La nuit des temps");
-        livre.setFree(false);
+        livre.setAvailable(false);
         bookBusiness.insertBook(livre);
 
         BookBean livre1 = new BookBean();
         livre1.setAuthor("Tolkien");
         livre1.setTitle("Le seigneur des anneaux");
-        livre1.setFree(false);
+        livre1.setAvailable(false);
         bookBusiness.insertBook(livre1);
 
         response.sendRedirect("book");

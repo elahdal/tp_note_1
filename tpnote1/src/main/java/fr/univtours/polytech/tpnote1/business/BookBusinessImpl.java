@@ -2,7 +2,6 @@ package fr.univtours.polytech.tpnote1.business;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import fr.univtours.polytech.tpnote1.model.BookBean;
 import jakarta.ejb.Stateless;
