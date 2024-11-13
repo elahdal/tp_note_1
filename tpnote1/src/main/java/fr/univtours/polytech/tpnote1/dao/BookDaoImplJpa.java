@@ -10,49 +10,30 @@ import jakarta.persistence.Query;
 @Stateless 
 public class BookDaoImplJpa implements BookDao {
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager em;
 
+    @SuppressWarnings("unchecked")//On utilise cette annotation, sinon un warning est levé
     @Override
     public List<BookBean> getBookList() {
         // Retourne la liste de tous les livres
-        String jpql = "SELECT b FROM BookBean b";
-        Query query = entityManager.createQuery(jpql);
-        return query.getResultList();
+        Query requete = em.createNativeQuery("select * from BOOK_JPA", NoteBean.class);
+        return requete.getResultList();
     }
 
     @Override
     public void borrowBookDao(BookBean book) {
         // Marque le livre comme emprunté en mettant à jour son statut
-        book.setAvailable(false);  // On suppose que BookBean a un attribut "available"
-        entityManager.merge(book);
+        //book.setAvailable(false);  // On suppose que BookBean a un attribut "available"
+        //entityManager.merge(book);
     }
 
     @Override
     public void returnBookDao(BookBean book) {
         // Marque le livre comme disponible
-        book.setAvailable(true);  // Mise à jour de l'attribut "available" à true
-        entityManager.merge(book);
+       // book.setAvailable(true);  // Mise à jour de l'attribut "available" à true
+        //entityManager.merge(book);
     }
 
-    @Override
-    public void deleteBookbyIdDao(int idbook) {
-        // Supprime un livre par son ID
-        BookBean book = entityManager.find(BookBean.class, idbook);
-        if (book != null) {
-            entityManager.remove(book);
-        }
-    }
-
-    @Override
-    public void updateBookbyIdDao(int idbook, String titre, String auteur) {
-        // Met à jour les informations du livre par son ID
-        BookBean book = entityManager.find(BookBean.class, idbook);
-        if (book != null) {
-            book.setTitre(titre);
-            book.setAuteur(auteur);
-            entityManager.merge(book);
-        }
-    }
     
 }
 
