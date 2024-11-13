@@ -15,13 +15,13 @@ public class BookBusinessImpl implements BookBusiness {
 
     public void borrowBook(Integer idBook) {
         BookBean book = bookDao.getBookById(idBook);
-        book.setFree(false);
+        book.setAvailable(false);
         bookDao.updateBook(book);
     }
 
     public void returnBook(Integer idBook) {
         BookBean book = bookDao.getBookById(idBook);
-        book.setFree(true);
+        book.setAvailable(true);
         bookDao.updateBook(book);
     }
 
@@ -42,7 +42,7 @@ public class BookBusinessImpl implements BookBusiness {
             BookBean bookBean2 = new BookBean();
             bookBean2.setTitle(bookBean.getTitle());
             bookBean2.setAuthor(bookBean.getAuthor());
-            bookBean2.setFree(bookBean.getFree());
+            bookBean2.setFree(bookBean.getAvailable());
             livres.add(bookBean);
         }
         return  livres;
