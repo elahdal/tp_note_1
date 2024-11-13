@@ -28,6 +28,7 @@ public class BookDaoImplJpa implements BookDao {
     public void borrowBookDao(BookBean book) {
         book.setAvailable(false);  // On suppose que BookBean a un attribut "available"
         em.merge(book);
+        /* 
         if (book.getAvailable()) {
             // Compter les livres empruntés
             int borrowedCount = countBorrowedBooks();
@@ -36,6 +37,7 @@ public class BookDaoImplJpa implements BookDao {
                 em.merge(book);
             }
         }
+        */
     }
 
     @Override
@@ -50,7 +52,6 @@ public class BookDaoImplJpa implements BookDao {
         return ((Number) query.getSingleResult()).intValue(); // Conversion du résultat en int
     }
     
-
     
 }
 
