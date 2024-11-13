@@ -46,13 +46,15 @@ public class BookBean {
         this.author = author;
     }
 
-    public Boolean getFree() {
+    public Boolean getAvailable() {
         return free;
     }
 
-    public void setFree(Boolean free) {
+    public void setAvailable(Boolean free) {
         this.free = free;
     }
+
+
 
 
 }

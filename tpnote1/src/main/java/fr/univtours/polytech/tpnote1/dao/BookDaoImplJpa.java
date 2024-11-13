@@ -16,23 +16,40 @@ public class BookDaoImplJpa implements BookDao {
     @Override
     public List<BookBean> getBookList() {
         // Retourne la liste de tous les livres
-        Query requete = em.createNativeQuery("select * from BOOK_JPA", NoteBean.class);
+        Query requete = em.createNativeQuery("select * from BOOK_JPA", BookBean.class);
         return requete.getResultList();
+    }
+
+    public void insertBookDao(BookBean book){
+        em.persist(book);
     }
 
     @Override
     public void borrowBookDao(BookBean book) {
-        // Marque le livre comme emprunté en mettant à jour son statut
-        //book.setAvailable(false);  // On suppose que BookBean a un attribut "available"
-        //entityManager.merge(book);
+        book.setAvailable(false);  // On suppose que BookBean a un attribut "available"
+        em.merge(book);
+        if (book.getAvailable()) {
+            // Compter les livres empruntés
+            int borrowedCount = countBorrowedBooks();
+            if (borrowedCount < 3) {
+                book.setAvailable(false);  // Le livre devient emprunté
+                em.merge(book);
+            }
+        }
     }
 
     @Override
     public void returnBookDao(BookBean book) {
         // Marque le livre comme disponible
-       // book.setAvailable(true);  // Mise à jour de l'attribut "available" à true
-        //entityManager.merge(book);
+        book.setAvailable(true);  // Mise à jour de l'attribut "available" à true
+        em.merge(book);
     }
+
+    public int countBorrowedBooks() {
+        Query query = em.createQuery("SELECT COUNT(b) FROM BookBean b WHERE b.available = false");
+        return ((Number) query.getSingleResult()).intValue(); // Conversion du résultat en int
+    }
+    
 
     
 }
