@@ -20,7 +20,7 @@ public class BookBean {
 
     private String author;
 
-    private Boolean free;
+    private Boolean available;
 
     public Integer getIdBook() {
         return idBook;
@@ -46,12 +46,12 @@ public class BookBean {
         this.author = author;
     }
 
-    public Boolean getFree() {
-        return free;
+    public Boolean getAvailable() {
+        return available;
     }
 
-    public void setFree(Boolean free) {
-        this.free = free;
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 
 
