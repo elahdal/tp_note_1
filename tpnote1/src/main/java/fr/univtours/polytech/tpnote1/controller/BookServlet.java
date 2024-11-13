@@ -35,7 +35,6 @@ public class BookServlet extends HttpServlet  {
             bookBusiness.returnBook(bookId);
         }
         
-
         response.sendRedirect("book");
     }
     

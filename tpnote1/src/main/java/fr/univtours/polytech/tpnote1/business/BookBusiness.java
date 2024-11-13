@@ -10,9 +10,9 @@ public interface BookBusiness {
 
     public void returnBook(Integer idBook);
 
-    public List<BookBean> listFreeBooks();
+    /*public List<BookBean> listFreeBooks();
 
-    public List<BookBean> listBorrowedBooks();
+    public List<BookBean> listBorrowedBooks();*/
 
     public List<BookBean> getBooksList();
 

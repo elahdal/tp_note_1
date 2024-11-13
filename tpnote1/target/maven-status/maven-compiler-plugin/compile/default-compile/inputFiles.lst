@@ -1,2 +1,9 @@
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\controller\FillDBServlet.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\model\BookBean.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\controller\BookServlet.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\dao\BookDao.java
 D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\JakartaRestConfiguration.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\dao\BookDaoImplJpa.java
 D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\resources\JakartaEE10Resource.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\business\BookBusiness.java
+D:\JEE\ws_archisi\TpNote1\tpnote1\src\main\java\fr\univtours\polytech\tpnote1\business\BookBusinessImpl.java

@@ -1,2 +1,9 @@
 fr\univtours\polytech\tpnote1\JakartaRestConfiguration.class
+fr\univtours\polytech\tpnote1\business\BookBusiness.class
+fr\univtours\polytech\tpnote1\controller\FillDBServlet.class
+fr\univtours\polytech\tpnote1\model\BookBean.class
+fr\univtours\polytech\tpnote1\controller\BookServlet.class
+fr\univtours\polytech\tpnote1\business\BookBusinessImpl.class
+fr\univtours\polytech\tpnote1\dao\BookDao.class
+fr\univtours\polytech\tpnote1\dao\BookDaoImplJpa.class
 fr\univtours\polytech\tpnote1\resources\JakartaEE10Resource.class

@@ -1,8 +1,8 @@
 package fr.univtours.polytech.tpnote1.business;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import fr.univtours.polytech.tpnote1.dao.BookDao;
 import fr.univtours.polytech.tpnote1.model.BookBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
@@ -16,27 +16,27 @@ public class BookBusinessImpl implements BookBusiness {
     public void borrowBook(Integer idBook) {
         BookBean book = bookDao.getBookById(idBook);
         book.setAvailable(false);
-        bookDao.updateBook(book);
+        bookDao.borrowBookDao(book);
     }
 
     public void returnBook(Integer idBook) {
         BookBean book = bookDao.getBookById(idBook);
         book.setAvailable(true);
-        bookDao.updateBook(book);
+        bookDao.returnBookDao(book);
     }
 
-    public List<BookBean> listFreeBooks() {
+    /*public List<BookBean> listFreeBooks() {
         return bookDao.getBooksList();
     }
 
     public List<BookBean> listBorrowedBooks() {
         
-    }
+    }*/
 
     @Override
     public List<BookBean> getBooksList() {
-        List<BookBean> livres = new ArrayList<BookBean>();
-        livres = bookDao.getBooksList();
+        /*List<BookBean> livres = new ArrayList<BookBean>();
+        livres = bookDao.getBookList();
         System.out.println("Nb de livres : " + livres.size());
         for (BookBean bookBean : livres) {
             BookBean bookBean2 = new BookBean();
@@ -45,7 +45,8 @@ public class BookBusinessImpl implements BookBusiness {
             bookBean2.setAvailable(bookBean.getAvailable());
             livres.add(bookBean);
         }
-        return  livres;
+        return  livres;*/
+        return bookDao.getBookList();
     }
 
     public BookBean getBookById(Integer idBook) {
@@ -53,7 +54,7 @@ public class BookBusinessImpl implements BookBusiness {
     }
 
     public BookBean insertBook(BookBean book) {
-        return bookDao.insertBook(book);
+        return bookDao.insertBookDao(book);
     }
 
 }

@@ -33,8 +33,6 @@ public class FillDBServlet extends HttpServlet {
         livre1.setAvailable(false);
         bookBusiness.insertBook(livre1);
 
-        response.sendRedirect("book");
-
     }
 }
 
