@@ -42,7 +42,7 @@ public class BookBusinessImpl implements BookBusiness {
             BookBean bookBean2 = new BookBean();
             bookBean2.setTitle(bookBean.getTitle());
             bookBean2.setAuthor(bookBean.getAuthor());
-            bookBean2.setFree(bookBean.getAvailable());
+            bookBean2.setAvailable(bookBean.getAvailable());
             livres.add(bookBean);
         }
         return  livres;
